@@ -73,10 +73,10 @@
     }
   },
   "variables": {
-    "hostingPlanName": "[concat(resourceGroup().name,'-asp')]",
-    "webSiteName": "[resourceGroup().name]",
-    "sqlserverName": "[concat(resourceGroup().name, 'sql')]",
-    "databaseName": "[concat(resourceGroup().name, 'db')]"
+    "hostingPlanName": "[concat(toLower(resourceGroup().name),'-asp')]",
+    "webSiteName": "[toLower(resourceGroup().name)]",
+    "sqlserverName": "[concat('sqlserver', uniqueString(resourceGroup().id))]",
+    "databaseName": "[concat(toLower(resourceGroup()).name, 'db')]"
   },
   "resources": [
     {
